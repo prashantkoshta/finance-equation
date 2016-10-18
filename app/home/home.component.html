@@ -1,20 +1,14 @@
-<GridLayout>
-
-    <StackLayout #initialContainer
-        class="initial-container">
-         <Label
-        text="Hellow World"
-        class="initial-button-label"></Label>
-         <StackLayout
-        (tap)="login()"
-        class="initial-button">
-            <Label
-                text="Next"
-                class="initial-button-label"></Label>
-        </StackLayout>
-    </StackLayout>
-
-   
- 
-
-</GridLayout>
+<StackLayout #initialContainer class="initial-container" orientation="vertical" >
+      <Label text="Finance-EQ" class="fn-title"></Label>
+      <Image src="res://icon" 
+      class="fn-logo"
+      stretch ="none"></Image> 
+      <Button
+      text="Simple Interest"
+      class="fn-button"
+      (tap)="login()"></Button>
+      <Button
+      text="Compound Interest"
+      class="submit-button"
+      (tap)="login()"></Button>
+</StackLayout>  

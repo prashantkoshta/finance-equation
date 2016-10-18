@@ -1,6 +1,6 @@
 {
-  "name":"Finance_Equation",
-  "version":"0.0.1",
+  "name": "Finance_Equation",
+  "version": "0.0.1",
   "description": "Provide solutions for Personal Finance Equation",
   "readme": "README.md",
   "repository": {
@@ -16,7 +16,7 @@
     "url": "https://github.com/prashantkoshta/finance-equation/issues"
   },
   "homepage": "https://github.com/prashantkoshta/finance-equation",
-   "scripts": {
+  "scripts": {
     "tslint": "tslint \"app/**/*.ts\""
   },
   "nativescript": {
@@ -55,7 +55,7 @@
     "lazy": "1.0.11",
     "nativescript-dev-typescript": "^0.3.2",
     "tslint": "^3.14.0",
-    "typescript": "^1.8.10",
+    "typescript": "^2.0.3",
     "babel-traverse": "6.16.0",
     "babel-types": "6.16.0",
     "babylon": "6.12.0"

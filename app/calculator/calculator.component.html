@@ -1,21 +1,33 @@
-<GridLayout>
-
-    <StackLayout #initialContainer
-        class="initial-container">
-         <Label
-        text="Finance World"
-        class="initial-button-label"></Label>
-         <StackLayout
-        (tap)="goHome()"
-        class="initial-button">
-            <Label
-                text="Click to Home"
-                class="initial-button-label"></Label>
-        </StackLayout>
-    </StackLayout>
-
-    
-
- 
-
-</GridLayout>
+<StackLayout #initialContainer class="initial-container" orientation="vertical" >
+      <Label text="Simple Interest" class="fn-title"></Label>
+      <Image src="res://icon" 
+      class="fn-logo"
+      stretch ="none"></Image>
+       <TextField #amount
+        [ngModel]="amount"
+        hint="Amount"
+        keyboardType="number"
+        returnKeyType="next"
+        autocapitalizationType="none">
+        </TextField>
+        <TextField #rate
+        [ngModel]="rate"
+        hint="Interest Rate"
+        keyboardType="number"
+        returnKeyType="next"
+        autocapitalizationType="none">
+        </TextField>
+        <TextField #time
+        [ngModel]="time"
+        hint="Years"
+        keyboardType="number"
+        returnKeyType="next"
+        autocapitalizationType="none">
+        </TextField>
+        <Button
+        text="Calculate"
+        class="fn-button"
+        (tap)="siCalcualte()"></Button>
+        <Label [text]="si"
+        class="fn-answer"></Label>
+</StackLayout>  

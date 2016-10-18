@@ -10,7 +10,8 @@ import { TextField } from "ui/text-field";
 
 @Component({
     selector: 'fn-home',
-    templateUrl: 'home/home.component.html'
+    templateUrl: 'home/home.component.html',
+    styleUrls: ["app.css","home/home.component.css"]
 })
 export class HomeComponent implements OnInit {
 

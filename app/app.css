@@ -1,18 +1,21 @@
-﻿.title {
-    font-size: 30;
+﻿Page {
+    background-color: ghostwhite;
+    font-size: 14;
+}
+.fn-logo{
     horizontal-align: center;
-    margin: 20;
+    margin-bottom: 10;
+}
+.fn-button{
+
+}
+.fn-title{
+    horizontal-align: center;
+    margin-bottom: 10;
+    font-size: 24;
 }
 
-button {
-    font-size: 42;
-    horizontal-align: center;
-}
-
-.message {
-    font-size: 20;
-    color: #284848;
-    horizontal-align: center;
-    margin: 0 20;
-    text-align: center;
+TextField {
+    padding: 8;
+    font-size: 14;
 }
