@@ -1,21 +1,31 @@
 ﻿Page {
     background-color: ghostwhite;
     font-size: 14;
+    padding: 0;
 }
 .fn-logo{
     horizontal-align: center;
     margin-bottom: 10;
 }
-.fn-button{
 
-}
 .fn-title{
     horizontal-align: center;
     margin-bottom: 10;
     font-size: 24;
 }
 
-TextField {
+.fn-input {
     padding: 8;
-    font-size: 14;
+    font-size: 16;
+}
+
+.initial-container{
+  margin-top:8;
+  background-color: lightgray
+}
+
+.fn-button{
+  background-color:teal;
+  color:black;
+  font-size: 12;
 }

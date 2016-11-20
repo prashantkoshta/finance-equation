@@ -14,16 +14,19 @@ import { TextField } from "ui/text-field";
     styleUrls: ["app.css","home/home.component.css"]
 })
 export class HomeComponent implements OnInit {
-
+     siLabel:string;
      @ViewChild("initialContainer") initialContainer: ElementRef;
 
     constructor(private router: Router,
-    private page: Page) { }
+    private page: Page) {
+        this.siLabel = "Simple Interest";
+     }
 
     ngOnInit() {
         this.page.actionBarHidden = true;
     }
     login(){
+        console.trace("#HomeComponent - Hello, world!");
          this.router.navigate(["/calculator"]);
     }
 }

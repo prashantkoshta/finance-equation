@@ -1,33 +1,38 @@
-<StackLayout #initialContainer class="initial-container" orientation="vertical" >
+<StackLayout #initialContainer class="initial-container" orientation="vertical"  >
       <Label text="Simple Interest" class="fn-title"></Label>
       <Image src="res://icon" 
       class="fn-logo"
       stretch ="none"></Image>
-       <TextField #amount
-        [ngModel]="amount"
+       <TextField #amountTxtField
         hint="Amount"
+        [text]="amount1"
+        class="fn-input"
         keyboardType="number"
+        (returnPress)="focusRate()"
         returnKeyType="next"
         autocapitalizationType="none">
         </TextField>
-        <TextField #rate
-        [ngModel]="rate"
+        <TextField #rateTxtField
+        class="fn-input"
         hint="Interest Rate"
         keyboardType="number"
+        (returnPress)="focusTime()"
         returnKeyType="next"
         autocapitalizationType="none">
         </TextField>
-        <TextField #time
-        [ngModel]="time"
+        <TextField #timeTxtField
+        class="fn-input"
         hint="Years"
         keyboardType="number"
+        (returnPress)="focusBtnCalcualte()"
         returnKeyType="next"
         autocapitalizationType="none">
         </TextField>
         <Button
-        text="Calculate"
+        horizontalAlignment="center"
+        text="Calculate Now"
         class="fn-button"
         (tap)="siCalcualte()"></Button>
-        <Label [text]="si"
+        <Label #resultLab text="{{amount1}}"
         class="fn-answer"></Label>
 </StackLayout>  

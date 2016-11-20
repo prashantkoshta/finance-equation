@@ -7,6 +7,7 @@ import { View } from "ui/core/view";
 import { prompt } from "ui/dialogs";
 import { Page } from "ui/page";
 import { TextField } from "ui/text-field";
+import { SiData} from "../shared";
 
 @Component({
     selector: 'fn-calculator',
@@ -14,21 +15,21 @@ import { TextField } from "ui/text-field";
     styleUrls: ["app.css","calculator/calculator.component.css"]
 })
 export class CalculatorComponent implements OnInit {
-
-    amount:any;
-    rate:any;
-    time:any;
-    si:any
-    t:string;
-
-     @ViewChild("initialContainer") initialContainer: ElementRef;
-
-    constructor(private router: Router,
-    private page: Page) {
-        this.amount= 1.00;
-        this.rate= 1.00;
-        this.time = 1;
-        this.si=0.00;
+    public siData:SiData;
+    public amount1:string;
+    @ViewChild("initialContainer") initialContainer: ElementRef;
+    @ViewChild("amountTxtField") amountTxtField: ElementRef;
+    @ViewChild("timeTxtField") timeTxtField: ElementRef;
+    @ViewChild("rateTxtField") rateTxtField: ElementRef;
+    @ViewChild("resultLab") resultLab: ElementRef;
+     
+    constructor(private router: Router, private page: Page) {
+        this.siData = new SiData();
+        this.siData.rate = 5.00;
+        this.siData.amount = 15.00;
+        this.siData.time = 1;
+        this.amount1 = "asdfsafsa";
+        
     }
 
     ngOnInit() {
@@ -38,9 +39,17 @@ export class CalculatorComponent implements OnInit {
          this.router.navigate(["/home"]);
     }
 
+    focusRate(){
+        this.rateTxtField.nativeElement.focus();
+    }
+
+    focusTime(){
+        this.timeTxtField.nativeElement.focus();
+    }
+
     siCalcualte():void{
-        console.log(this.amount);
-        this.si = (this.amount*this.rate*this.time)/ 100;
+       console.log("#CalculatorComponent-siCalcualte:"+this.amountTxtField.nativeElement);
+       console.log("Hello, world!");
     }
     
 }
