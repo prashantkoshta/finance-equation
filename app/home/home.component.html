@@ -3,7 +3,7 @@
       <Image src="res://icon" 
       class="fn-logo"
       stretch ="none"></Image> 
-      <Button
+      <!--Button
       [text]="siLabel"
       horizontalAlignment="center"
       class="fn-button"
@@ -12,5 +12,14 @@
       [text]="compLabel"
       horizontalAlignment="center"
       class="fn-button"
-      (tap)="actionCI()"></Button>
+      (tap)="actionCI()"></Button -->
+
+      <ListView [items]="items">
+            <template let-item="item">
+                  <StackLayout clas="fn-stacklayout">
+                        <Button [text]="item.type" class="fn-list-button" (tap)="actionOnSelect(item)" ></Button>
+                  </StackLayout>
+            </template>
+      </ListView>
+
 </StackLayout>  

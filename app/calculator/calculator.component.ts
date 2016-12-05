@@ -32,7 +32,6 @@ export class CalculatorComponent implements OnInit {
         this.si=0.00;
         this.btnName ="Calculate Now";
     }
-
     ngOnInit() {
         this.page.actionBarHidden = true;
     }
@@ -50,8 +49,6 @@ export class CalculatorComponent implements OnInit {
 
     siCalcualte():void{
        this.si = (this.amount * this.rate * this.year ) /100 ;
-       console.log("#CalculatorComponent-siCalcualte:"+this.amountTxtField.nativeElement);
-       console.log("Hello, world!",this.amount,this.rate,this.year);
     }
     
 }

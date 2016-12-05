@@ -3,34 +3,39 @@ import { Router } from "@angular/router";
 import { Page } from "ui/page";
 import { TextField } from "ui/text-field";
 
+import { EquationListService } from "./../shared/equationlist.service";
+import { IEquationData } from "./../shared/iequationdata.d";
+
 @Component({
     selector: 'fn-home',
     templateUrl: 'home/home.component.html',
     styleUrls: ["app.css","home/home.component.css"]
 })
 export class HomeComponent implements OnInit {
-     siLabel:string;
-     compLabel:string;
-     email:string = "nativescriptrocks@telerik.com";
+     items:Array<IEquationData>;
 
      @ViewChild("initialContainer") initialContainer: ElementRef;
-
     constructor(private router: Router,
-    private page: Page) {
-        this.siLabel = "SIMPLE INTEREST";
-        this.compLabel = "COMPOUND INTERESET";
-        console.log("###########: Hello");
+    private page: Page,
+    private _eqListService:EquationListService) {
+        this.items = new Array<IEquationData>();
      }
 
     ngOnInit() {
-        this.page.actionBarHidden = true;
+      //  this.page.actionBarHidden = true;
+       this._eqListService.getFinEquListData().subscribe(data => {
+            this.items =  data;
+        },
+        error =>{
+            console.log(">>>>>>ERROR>>>>>>");
+        });
     }
-    actionSI(){
-        console.log("#HomeComponent - Hello, world!");
-        this.router.navigate(["/calculator"]);
-    }
-    actionCI(){
-        console.log("#HomeComponent - Hello, world!");
-        this.router.navigate(["/calculator"]);
+    
+    actionOnSelect(arg:IEquationData){
+        switch(arg.action){
+            case "SIMINT":
+                 this.router.navigate([arg.pageurl]);
+            default:
+        }
     }
 }

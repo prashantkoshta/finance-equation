@@ -34,6 +34,6 @@
         [text]="btnName"
         class="fn-button"
         (tap)="siCalcualte()"></Button>
-        <Label #resultLab [text]="si"
+        <Label #resultLab [text]="si | currency:'USD':true:'1.2-2'"
         class="fn-answer"></Label>
 </StackLayout>  

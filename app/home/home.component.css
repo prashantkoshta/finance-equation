@@ -5,3 +5,18 @@
   font-size: 14;
   font-weight: bold;
 }
+
+.fn-list-button{
+  margin:0;
+  height:45;
+  background-color:darkorange;
+  color:black;
+  text-align: left;
+  font-size: 14;
+  font-weight: bold;
+}
+
+.fn-stacklayout{
+  padding:10;
+  margin:0;
+}

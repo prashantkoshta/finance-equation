@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { homeRouting } from "./home.routing";
 import { HomeComponent } from "./home.component";
 import { CalculatorModule } from "./../calculator/calculator.module";
+import { EquationListService } from "./../shared/equationlist.service";
+import { FnEqConstantsService } from "./../shared/fnconstants.service";
 
 @NgModule({
   imports: [
@@ -18,6 +20,7 @@ import { CalculatorModule } from "./../calculator/calculator.module";
   ],
   declarations: [
     HomeComponent
-  ]
+  ],
+  providers:[EquationListService,FnEqConstantsService]
 })
 export class HomeModule { }
