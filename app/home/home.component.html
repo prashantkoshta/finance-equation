@@ -4,13 +4,13 @@
       class="fn-logo"
       stretch ="none"></Image> 
       <Button
-      text="{{siLabel}}"
-       horizontalAlignment="center"
+      [text]="siLabel"
+      horizontalAlignment="center"
       class="fn-button"
-      (tap)="login()"></Button>
+      (tap)="actionSI()"></Button>
       <Button
-      text="Compound Interest"
-       horizontalAlignment="center"
+      [text]="compLabel"
+      horizontalAlignment="center"
       class="fn-button"
-      (tap)="login()"></Button>
+      (tap)="actionCI()"></Button>
 </StackLayout>  

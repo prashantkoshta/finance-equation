@@ -7,7 +7,6 @@ import { View } from "ui/core/view";
 import { prompt } from "ui/dialogs";
 import { Page } from "ui/page";
 import { TextField } from "ui/text-field";
-import { SiData} from "../shared";
 
 @Component({
     selector: 'fn-calculator',
@@ -15,8 +14,11 @@ import { SiData} from "../shared";
     styleUrls: ["app.css","calculator/calculator.component.css"]
 })
 export class CalculatorComponent implements OnInit {
-    public siData:SiData;
-    public amount1:string;
+    amount:number;
+    rate:number;
+    year:number;
+    si:number;
+    btnName:string;
     @ViewChild("initialContainer") initialContainer: ElementRef;
     @ViewChild("amountTxtField") amountTxtField: ElementRef;
     @ViewChild("timeTxtField") timeTxtField: ElementRef;
@@ -24,12 +26,11 @@ export class CalculatorComponent implements OnInit {
     @ViewChild("resultLab") resultLab: ElementRef;
      
     constructor(private router: Router, private page: Page) {
-        this.siData = new SiData();
-        this.siData.rate = 5.00;
-        this.siData.amount = 15.00;
-        this.siData.time = 1;
-        this.amount1 = "asdfsafsa";
-        
+        this.amount = 1.5;
+        this.rate =2;
+        this.year =1;
+        this.si=0.00;
+        this.btnName ="Calculate Now";
     }
 
     ngOnInit() {
@@ -48,8 +49,9 @@ export class CalculatorComponent implements OnInit {
     }
 
     siCalcualte():void{
+       this.si = (this.amount * this.rate * this.year ) /100 ;
        console.log("#CalculatorComponent-siCalcualte:"+this.amountTxtField.nativeElement);
-       console.log("Hello, world!");
+       console.log("Hello, world!",this.amount,this.rate,this.year);
     }
     
 }

@@ -4,35 +4,36 @@
       class="fn-logo"
       stretch ="none"></Image>
        <TextField #amountTxtField
+        [(ngModel)]="amount"
         hint="Amount"
-        [text]="amount1"
         class="fn-input"
         keyboardType="number"
-        (returnPress)="focusRate()"
         returnKeyType="next"
         autocapitalizationType="none">
         </TextField>
         <TextField #rateTxtField
+        [(ngModel)]="rate"
+        keyboardType="number"
         class="fn-input"
         hint="Interest Rate"
         keyboardType="number"
-        (returnPress)="focusTime()"
         returnKeyType="next"
         autocapitalizationType="none">
         </TextField>
         <TextField #timeTxtField
+         [(ngModel)]="year"
+        keyboardType="number"
         class="fn-input"
         hint="Years"
         keyboardType="number"
-        (returnPress)="focusBtnCalcualte()"
         returnKeyType="next"
         autocapitalizationType="none">
         </TextField>
         <Button
         horizontalAlignment="center"
-        text="Calculate Now"
+        [text]="btnName"
         class="fn-button"
         (tap)="siCalcualte()"></Button>
-        <Label #resultLab text="{{amount1}}"
+        <Label #resultLab [text]="si"
         class="fn-answer"></Label>
 </StackLayout>  

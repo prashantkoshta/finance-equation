@@ -1,10 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
-import { Color } from "color";
-import { connectionType, getConnectionType } from "connectivity";
-import { Animation } from "ui/animation";
-import { View } from "ui/core/view";
-import { prompt } from "ui/dialogs";
 import { Page } from "ui/page";
 import { TextField } from "ui/text-field";
 
@@ -15,18 +10,27 @@ import { TextField } from "ui/text-field";
 })
 export class HomeComponent implements OnInit {
      siLabel:string;
+     compLabel:string;
+     email:string = "nativescriptrocks@telerik.com";
+
      @ViewChild("initialContainer") initialContainer: ElementRef;
 
     constructor(private router: Router,
     private page: Page) {
-        this.siLabel = "Simple Interest";
+        this.siLabel = "SIMPLE INTEREST";
+        this.compLabel = "COMPOUND INTERESET";
+        console.log("###########: Hello");
      }
 
     ngOnInit() {
         this.page.actionBarHidden = true;
     }
-    login(){
-        console.trace("#HomeComponent - Hello, world!");
-         this.router.navigate(["/calculator"]);
+    actionSI(){
+        console.log("#HomeComponent - Hello, world!");
+        this.router.navigate(["/calculator"]);
+    }
+    actionCI(){
+        console.log("#HomeComponent - Hello, world!");
+        this.router.navigate(["/calculator"]);
     }
 }

@@ -1,5 +1,5 @@
 ﻿Page {
-    background-color: ghostwhite;
+    background-color: lightgray;
     font-size: 14;
     padding: 0;
 }
@@ -21,11 +21,5 @@
 
 .initial-container{
   margin-top:8;
-  background-color: lightgray
-}
-
-.fn-button{
-  background-color:teal;
-  color:black;
-  font-size: 12;
+  background-color: whitesmoke
 }

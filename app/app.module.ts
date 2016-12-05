@@ -1,12 +1,11 @@
 import { NativeScriptModule } from "nativescript-angular/platform";
-import { NgModule } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { authProviders, appRoutes } from "./app.routing";
 import { AppComponent } from "./app.component";
-/*import { setStatusBarColors, BackendService, LoginService } from "./shared";
-*/
 import { HomeModule } from "./home/home.module";
-import { CalculatorModule } from "./calculator/calculator.module";
 //setStatusBarColors();
 
 @NgModule({
@@ -18,7 +17,8 @@ import { CalculatorModule } from "./calculator/calculator.module";
     NativeScriptRouterModule,
     NativeScriptRouterModule.forRoot(appRoutes),
     HomeModule,
-    CalculatorModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [
       AppComponent,
