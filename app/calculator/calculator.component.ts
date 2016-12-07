@@ -7,6 +7,7 @@ import { View } from "ui/core/view";
 import { prompt } from "ui/dialogs";
 import { Page } from "ui/page";
 import { TextField } from "ui/text-field";
+import { CalcualtionService } from "./../shared/calculation.service";
 
 @Component({
     selector: 'fn-calculator',
@@ -19,18 +20,19 @@ export class CalculatorComponent implements OnInit {
     year:number;
     si:number;
     btnName:string;
+    arTimes:Array<string>;
+    selectedTimeIndex:number;
     @ViewChild("initialContainer") initialContainer: ElementRef;
     @ViewChild("amountTxtField") amountTxtField: ElementRef;
     @ViewChild("timeTxtField") timeTxtField: ElementRef;
     @ViewChild("rateTxtField") rateTxtField: ElementRef;
     @ViewChild("resultLab") resultLab: ElementRef;
      
-    constructor(private router: Router, private page: Page) {
-        this.amount = 1.5;
-        this.rate =2;
-        this.year =1;
-        this.si=0.00;
+    constructor(private router: Router, private page: Page,private _calculate:CalcualtionService) {
         this.btnName ="Calculate Now";
+        this.arTimes = new Array<string>("year","quarter","month","week","day");
+        this.selectedTimeIndex = 0;
+
     }
     ngOnInit() {
         this.page.actionBarHidden = true;
@@ -48,7 +50,15 @@ export class CalculatorComponent implements OnInit {
     }
 
     siCalcualte():void{
-       this.si = (this.amount * this.rate * this.year ) /100 ;
+        this.si = this._calculate.getSI(this.amount,this.rate,this.year,this.arTimes[this.selectedTimeIndex]);
+    }
+
+    selectedIndexChanged():void{
+        console.log(this.selectedTimeIndex);
+    }
+
+    navigatePrev():void{
+        this.router.navigate(["/home"]);
     }
     
 }

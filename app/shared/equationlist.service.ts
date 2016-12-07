@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 import {FnEqConstantsService} from "./fnconstants.service";
-import { IEquationData } from './iequationdata.d';
+import { IEquationData } from './iequationdata.interface';
 
 @Injectable()
 export class EquationListService {
@@ -22,8 +22,9 @@ export class EquationListService {
         });
         return this._http.get(this._urlService.fnlistURL,options)
         .map((response: Response) => <Array<IEquationData>> response.json())
-        .do(data => console.log("All"+JSON.stringify(data)))
+        .do(data => {})
         .catch(this.handleError);
+        // .do(data => console.log("All"+JSON.stringify(data)))
     }
 
     private handleError(error:Response):Observable<any>{

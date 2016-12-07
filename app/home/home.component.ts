@@ -4,7 +4,7 @@ import { Page } from "ui/page";
 import { TextField } from "ui/text-field";
 
 import { EquationListService } from "./../shared/equationlist.service";
-import { IEquationData } from "./../shared/iequationdata.d";
+import { IEquationData } from "./../shared/iequationdata.interface";
 
 @Component({
     selector: 'fn-home',
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
      }
 
     ngOnInit() {
-      //  this.page.actionBarHidden = true;
+    this.page.actionBarHidden = true;
        this._eqListService.getFinEquListData().subscribe(data => {
             this.items =  data;
         },

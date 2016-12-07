@@ -12,10 +12,11 @@ import { authProviders, appRoutes } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { HomeModule } from "./home/home.module";
 //setStatusBarColors();
+import { CalcualtionService } from "./shared/calculation.service";
 
 @NgModule({
   providers: [
-    
+    CalcualtionService
   ],
   imports: [
     NativeScriptModule,

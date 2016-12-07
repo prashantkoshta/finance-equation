@@ -9,6 +9,7 @@ import { CalculatorModule } from "./../calculator/calculator.module";
 import { EquationListService } from "./../shared/equationlist.service";
 import { FnEqConstantsService } from "./../shared/fnconstants.service";
 
+
 @NgModule({
   imports: [
     NativeScriptModule,
